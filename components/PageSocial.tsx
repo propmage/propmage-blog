@@ -5,6 +5,8 @@ import * as config from 'lib/config'
 
 import styles from './PageSocial.module.css'
 
+import {FaGlobeAmericas} from '@react-icons/all-files/fa/FaGlobeAmericas'
+
 interface SocialLink {
   name: string
   title: string
@@ -13,6 +15,16 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
+  config.homepage && {
+    name: 'homepage',
+    href: `https://${config.homepage}`,
+    title: `Homepage: ${config.twitter}`,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg"  width="24px" height="24px" version="1.1" viewBox="0 0 600 1100" fill="#5f5d58">
+        <path d="M426.79 608.99c156.92,-21.85 223.02,-215.32 109.9,-328.47 -121.54,-121.51 -330.29,-35.1 -330.33,136.83l-0.03 102.68c0,3.23 -1.16,6.01 -3.44,8.29 -2.29,2.29 -5.08,3.42 -8.31,3.41 -49.88,-0.28 -109.78,22.62 -148.74,50.17 -7.26,5.14 -16.19,5.78 -24.11,1.69 -7.92,-4.08 -12.57,-11.71 -12.61,-20.61l-0.51 -145.63c-0.36,-215.41 174.98,-391.24 391.26,-391.24 347.34,0 522.54,421.98 276.63,667.88 -69.52,69.53 -165.07,113.01 -270.77,114.57 -41.37,0.56 -82.73,-0.39 -124.1,-0.42 -41.41,-0.05 -75.2,33.72 -75.22,75.12l-0.08 190.64 -196.99 0c0.05,-89.48 -0.4,-180.34 -0.4,-269.06 0,-106.76 87.12,-193.88 193.89,-193.8 73.14,0.06 151.11,8.09 223.96,-2.05z"/>
+      </svg>
+    ),
+  },
   config.twitter && {
     name: 'twitter',
     href: `https://twitter.com/${config.twitter}`,
@@ -44,10 +56,26 @@ const socialLinks: SocialLink[] = [
         <path d='M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z' />
       </svg>
     )
+  },
+
+  config.facebook && {
+    name: 'facebook',
+    href: `https://facebook.com/${config.facebook}`,
+    title: `Facebook ${config.author}`,
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
+      </svg>
+    )
   }
+
+
+
+
 ].filter(Boolean)
 
 export const PageSocial: React.FC = () => {
+  console.log(socialLinks);
   return (
     <div className={styles.pageSocial}>
       {socialLinks.map((action) => (

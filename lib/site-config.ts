@@ -14,6 +14,8 @@ export interface SiteConfig {
   github?: string
   linkedin?: string
   zhihu?: string
+  facebook?: string
+  homepage?: string
 
   defaultPageIcon?: string | null
   defaultPageCover?: string | null
