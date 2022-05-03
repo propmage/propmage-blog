@@ -8,6 +8,10 @@ export default class MyDocument extends Document {
       <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
         <Html lang='en'>
           <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap"
+            rel="stylesheet"
+          />
             <link rel='shortcut icon' href='/favicon.ico' />
             <link
               rel='icon'
