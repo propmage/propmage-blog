@@ -5,8 +5,6 @@ import * as config from 'lib/config'
 
 import styles from './PageSocial.module.css'
 
-import {FaGlobeAmericas} from '@react-icons/all-files/fa/FaGlobeAmericas'
-
 interface SocialLink {
   name: string
   title: string
