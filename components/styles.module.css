@@ -48,6 +48,12 @@
   margin: auto auto 0;
   background-color: #f0f0f0;
 }
+.footer_dark{
+  width: 100%;
+  margin: auto auto 0;
+  background-color: #1a1a1a;
+}
+
 .footer__inner {
   max-width: 1100px;
   padding: 35px;
@@ -61,12 +67,8 @@
 }
 
 .footer_logo{
-  height: 35px;
-}
-
-.copyright {
-  font-size: 80%;
-  padding: 0.5em;
+  height: 25px;
+  display: block;
 }
 
 .settings,
