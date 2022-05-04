@@ -32,11 +32,11 @@ export const FooterImpl: React.FC = () => {
   }, [])
 
   return (
-    <footer className={isDarkMode ? styles.footer_dark : styles.footer}>
+    <footer className={hasMounted && isDarkMode ? styles.footer_dark : styles.footer}>
       <div className={styles.footer__inner}>
       <div className={styles.copyright}>
         <a href="https://propmage.com">
-          <img src={isDarkMode ? "/propmage-logo-white.svg" : "/propmage-logo.svg"} alt="CRM for Real Estate" className={styles.footer_logo} />
+          <img src={hasMounted && isDarkMode ? "/propmage-logo-white.svg" : "/propmage-logo.svg"} alt="CRM for Real Estate" className={styles.footer_logo} />
         </a>
 
       </div>
