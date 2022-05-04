@@ -33,7 +33,12 @@ export const FooterImpl: React.FC = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.copyright}>Copyright 2022 {config.author}</div>
+      <div className={styles.footer__inner}>
+      <div className={styles.copyright}>
+        <a href="https://propmage.com">
+          <img src="/propmage-logo.svg" alt="Propmage" className={styles.footer_logo} />
+        </a>
+      </div>
 
       <div className={styles.settings}>
         {hasMounted && (
@@ -109,6 +114,7 @@ export const FooterImpl: React.FC = () => {
             <FaFacebookSquare />
           </a>
         )}
+      </div>
       </div>
     </footer>
   )
