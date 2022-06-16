@@ -20,7 +20,7 @@ export default siteConfig({
   // social usernames (optional)
   twitter: 'propmage',
   linkedin: 'propmage',
-  github: 'propmage',
+  // github: 'propmage',
   facebook: 'propmage',
   homepage: 'propmage.com',
 

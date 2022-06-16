@@ -33,6 +33,8 @@ import { NotionPageHeader } from './NotionPageHeader'
 
 import styles from './styles.module.css'
 
+
+import { NextSeo } from 'next-seo';
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
 // -----------------------------------------------------------------------------
@@ -247,6 +249,17 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
+    const socialTags =
+    getPageProperty<any>('Tags', block, recordMap) ||
+    ['real estate']
+
+    const published =
+    getPageProperty<number>('Published', block, recordMap);
+
+    const lastUpdated =
+    getPageProperty<number>('Last updated', block, recordMap);
+
+
   return (
     <>
       <PageHead
@@ -257,6 +270,28 @@ export const NotionPage: React.FC<types.PageProps> = ({
         image={socialImage}
         url={canonicalPageUrl}
       />
+
+      <NextSeo
+          openGraph={{
+            title: title,
+            description: socialDescription,
+            url: canonicalPageUrl,
+            type: 'article',
+            article: {
+              publishedTime: new Date(published).toISOString(),
+              modifiedTime: new Date(lastUpdated).toISOString(),
+              tags: socialTags,
+            },
+            images: [
+              {
+                url: socialImage,
+                width: 850,
+                height: 650,
+                alt: title,
+              },
+            ],
+          }}
+        />
 
       {isLiteMode && <BodyClassName className='notion-lite' />}
       {isDarkMode && <BodyClassName className='dark-mode' />}
